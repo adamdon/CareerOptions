@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Hostel Homepage</title>
+    <link href="../css/styleSheet.css" rel="stylesheet" type="text/css">
+    <script src="../javascript/admin_login.js" defer></script>
+
+</head>
+
+
+<body>
+
+<header>
+    <h1> Backpacker's Hostel Survey Results</h1>
+    <img src="../images/banners/banner.jpg" width="900" height="126" alt="banner"/>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="../index.html">Home Page</a></li>
+        <li><a href="es.html">Facilities</a> </li>
+        <li><a href="l">Cafe</a></li>
+        <li><a href="ere.html">Getting here</a></li>
+        <li><a href="ormStart.html">Contact Us</a></li>
+        <li><a href="/adminLogin.html">Admin Login</a></li>
+    </ul>
+</nav>
+
+<section id="content">
+    <h2>Admin Login</h2>
+    <form action="javascript:loginOnClick()">
+
+        <div class="container">
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+            <button type="submit">Login</button>
+        </div>
+
+    </form>
+    <div id="loginResultsBox"><h3>Waiting...</h3></div>
+</section>
+
+</body>
+
+
+</html>
