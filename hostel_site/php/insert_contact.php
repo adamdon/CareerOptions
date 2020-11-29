@@ -34,7 +34,7 @@ $conn = null;
 echo 'Hi '.$_POST['first'].' ' .$_POST['last'] .' thanks for your interest.</br>';
 echo 'We will contact you at '. $_POST['email'].' soon.</br>';
 echo 'We will contact you at '. $_POST['email'].' soon.</br>';
-echo '<a href="../index.php">Go back to Home Page</a>';
+echo '<a href="../index.html">Go back to Home Page</a>';
 
 
 

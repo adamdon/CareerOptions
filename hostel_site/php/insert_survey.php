@@ -64,7 +64,7 @@ echo 'Email inputted: '. $_POST['email'].' .</br>';
 echo 'Transport inputted: '. $_POST['transport'].' .</br>';
 echo 'Published permission inputted: '. $_POST['published'].' .</br>';
 
-echo '<a href="../index.php">Go back to Home Page</a>';
+echo '<a href="../index.html">Go back to Home Page</a>';
 
 
 
