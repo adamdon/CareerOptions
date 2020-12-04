@@ -9,6 +9,7 @@ body
     line-height: 1.5;
     /*color: #ebebeb;*/
     text-align: left;
+    overflow-y: scroll;
     background-color: #2b3e50;
 }
 
