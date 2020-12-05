@@ -1,32 +1,16 @@
 $(document).ready(function()
 {
-    // var searchInputElement = document.getElementById("searchInput");
-    //
-    // searchInputElement.addEventListener("keyup", function(event)
-    // {
-    //     // Number 13 is the "Enter" key on the keyboard
-    //     if (event.keyCode === 13)
-    //     {
-    //         event.preventDefault();
-    //     }
-    // });
+    onReadyPageLoaded();
+})
 
 
-    // $("#searchInput").on('keyup', function (event)
-    // {
-    //     if (event.keyCode === 13)
-    //     {
-    //         event.preventDefault();
-    //         console.log("Enter key pressed!!!!!");
-    //
-    //         onClickSearchButton();
-    //         // document.getElementById("searchButton").click();
-    //     }
-    // });
 
+
+function onReadyPageLoaded()
+{
     $(window).keydown(function(event)
     {
-        if(event.keyCode == 13)
+        if(event.keyCode === 13)
         {
             event.preventDefault();
             document.getElementById("searchButton").click();
@@ -35,30 +19,28 @@ $(document).ready(function()
             return false;
         }
     });
+}
 
 
-
-    // var keywordText;
-    //
-    //
-    // keywordText = "software";
-    // performLmiforallApiSearch(keywordText);
-})
 
 
 function onClickSearchButton()
 {
+    var searchInputElement;
     var keywordText;
 
 
-    if(($('#searchInput').val() !== null) && ($('#searchInput').val() !== ""))
+    searchInputElement = $('#searchInput');
+
+    if((searchInputElement.val() !== null) && (searchInputElement.val() !== "") && (searchInputElement.val().trim().length !== 0))
     {
         keywordText = $('#searchInput').val();
         performLmiforallApiSearch(keywordText);
     }
     else
     {
-        alert("null pointer");
+        document.getElementById('searchInput').focus();
+        document.getElementById('searchInput').select();
     }
 }
 
@@ -105,6 +87,5 @@ function updateTableWithData(toUpdateWithData)
 
     tableElement = $('#table');
     tableElement.bootstrapTable('destroy')
-    // tableElement.bootstrapTable('load', toUpdateWithData);
     tableElement.bootstrapTable({data: toUpdateWithData});
 }
