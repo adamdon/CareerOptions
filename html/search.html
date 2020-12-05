@@ -57,8 +57,8 @@
                 </ul>
 
                 <form class="form-inline my-2 my-md-0">
-                    <label for="searchInput"></label>
-                    <input id="searchInput" name="searchInput" type="text" placeholder="Search" class="form-control mr-sm-2">
+<!--                    <label for="searchInput"></label>-->
+<!--                    <input id="searchInput" name="searchInput" type="text" placeholder="Search" class="form-control mr-sm-2">-->
                     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
 
@@ -83,6 +83,13 @@
 
 
                                     <p class="lead">Search Results</p>
+
+                                    <form class="form-inline my-2 my-md-0">
+                                        <label for="searchInput"></label>
+                                        <input id="searchInput" name="searchInput" type="text" placeholder="Enter keyword" class="form-control mr-sm-2" required>
+                                        <button id="searchButton" class="btn btn-secondary my-2 my-sm-0" type="button" onclick="onClickSearchButton()">Search</button>
+                                    </form>
+
                                     <hr class="my-4">
 
                                     <table id="table">

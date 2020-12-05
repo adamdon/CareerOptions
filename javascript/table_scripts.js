@@ -1,11 +1,66 @@
-$(function()
+$(document).ready(function()
+{
+    // var searchInputElement = document.getElementById("searchInput");
+    //
+    // searchInputElement.addEventListener("keyup", function(event)
+    // {
+    //     // Number 13 is the "Enter" key on the keyboard
+    //     if (event.keyCode === 13)
+    //     {
+    //         event.preventDefault();
+    //     }
+    // });
+
+
+    // $("#searchInput").on('keyup', function (event)
+    // {
+    //     if (event.keyCode === 13)
+    //     {
+    //         event.preventDefault();
+    //         console.log("Enter key pressed!!!!!");
+    //
+    //         onClickSearchButton();
+    //         // document.getElementById("searchButton").click();
+    //     }
+    // });
+
+    $(window).keydown(function(event)
+    {
+        if(event.keyCode == 13)
+        {
+            event.preventDefault();
+            document.getElementById("searchButton").click();
+            document.getElementById('searchInput').focus();
+            document.getElementById('searchInput').select();
+            return false;
+        }
+    });
+
+
+
+    // var keywordText;
+    //
+    //
+    // keywordText = "software";
+    // performLmiforallApiSearch(keywordText);
+})
+
+
+function onClickSearchButton()
 {
     var keywordText;
 
 
-    keywordText = "software";
-    performLmiforallApiSearch(keywordText);
-})
+    if(($('#searchInput').val() !== null) && ($('#searchInput').val() !== ""))
+    {
+        keywordText = $('#searchInput').val();
+        performLmiforallApiSearch(keywordText);
+    }
+    else
+    {
+        alert("null pointer");
+    }
+}
 
 
 
@@ -49,5 +104,7 @@ function updateTableWithData(toUpdateWithData)
     var tableElement;
 
     tableElement = $('#table');
+    tableElement.bootstrapTable('destroy')
+    // tableElement.bootstrapTable('load', toUpdateWithData);
     tableElement.bootstrapTable({data: toUpdateWithData});
 }
