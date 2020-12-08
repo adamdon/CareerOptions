@@ -1,12 +1,12 @@
 $(document).ready(function()
 {
-    onReadyPageLoaded();
+    onReadyOverrideEnterPress();
+    onReadyTableRowOnClickEvent();
 })
 
 
 
-
-function onReadyPageLoaded()
+function onReadyOverrideEnterPress()
 {
     $(window).keydown(function(event)
     {
@@ -21,6 +21,30 @@ function onReadyPageLoaded()
     });
 }
 
+function onReadyTableRowOnClickEvent()
+{
+    $('#table').on('click-row.bs.table', function ($element, row)
+    {
+        onClickTableRow(row)
+    })
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////CALLABLE FUNCTIONS////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+function onClickTableRow(rowData)
+{
+    var socNumber;
+
+
+    socNumber = rowData.soc;
+
+    console.log(typeof RowData.soc);
+}
 
 
 
