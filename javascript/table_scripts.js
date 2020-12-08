@@ -91,21 +91,23 @@ function updateTableWithData(toUpdateWithData)
 
 function updateInfoCardDetailsWithData(toUpdateWithData)
 {
-    var infoCardRoleTitleElement;
-    var infoCardQualificationsPElement;
-
     var infoCardRoleTitleText;
     var infoCardQualificationsPText;
-
-    infoCardRoleTitleElement = $('#infoCardRoleTitle');
-    infoCardQualificationsPElement = $('#infoCardQualificationsP');
+    var infoCardDescriptionPText;
+    var infoCardRoleTitleElement;
+    var infoCardQualificationsPElement;
+    var infoCardDescriptionPElement;
 
     infoCardRoleTitleText = toUpdateWithData.title;
     infoCardQualificationsPText = toUpdateWithData.qualifications;
+    infoCardDescriptionPText = toUpdateWithData.description;
 
+    infoCardRoleTitleElement = $('#infoCardRoleTitle');
+    infoCardQualificationsPElement = $('#infoCardQualificationsP');
+    infoCardDescriptionPElement = $('#infoCardDescriptionP');
     infoCardRoleTitleElement.text(infoCardRoleTitleText);
     infoCardQualificationsPElement.text(infoCardQualificationsPText);
-
+    infoCardDescriptionPElement.text(infoCardDescriptionPText);
 }
 
 
