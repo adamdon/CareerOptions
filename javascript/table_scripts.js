@@ -1,3 +1,8 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////OnREADY FUNCTIONS/////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 $(document).ready(function()
 {
     onReadyOverrideEnterPress();
@@ -32,7 +37,7 @@ function onReadyTableRowOnClickEvent()
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////CALLABLE FUNCTIONS////////////////////////////////////////////////
+///////////////////////////////////////////////////////OnClick FUNCTIONS////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -40,10 +45,9 @@ function onClickTableRow(rowData)
 {
     var socNumber;
 
-
     socNumber = rowData.soc;
-
-    console.log(typeof RowData.soc);
+    performApiSocDataRequest(socNumber);
+    // console.log(typeof socNumber);
 }
 
 
@@ -59,7 +63,7 @@ function onClickSearchButton()
     if((searchInputElement.val() !== null) && (searchInputElement.val() !== "") && (searchInputElement.val().trim().length !== 0))
     {
         keywordText = $('#searchInput').val();
-        performLmiforallApiSearch(keywordText);
+        performApiKeywordSearch(keywordText);
     }
     else
     {
@@ -69,13 +73,9 @@ function onClickSearchButton()
 }
 
 
-
-
-
-
-
-
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////UPDATE UI FUNCTIONS////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -89,6 +89,27 @@ function updateTableWithData(toUpdateWithData)
 }
 
 
+function updateInfoCardDetailsWithData(toUpdateWithData)
+{
+    var infoCardRoleTitleElement;
+    var infoCardQualificationsPElement;
+
+    var infoCardRoleTitleText;
+    var infoCardQualificationsPText;
+
+    infoCardRoleTitleElement = $('#infoCardRoleTitle');
+    infoCardQualificationsPElement = $('#infoCardQualificationsP');
+
+    infoCardRoleTitleText = toUpdateWithData.title;
+    infoCardQualificationsPText = toUpdateWithData.qualifications;
+
+    infoCardRoleTitleElement.text(infoCardRoleTitleText);
+    infoCardQualificationsPElement.text(infoCardQualificationsPText);
+
+}
+
+
+
 
 
 
@@ -96,10 +117,7 @@ function updateTableWithData(toUpdateWithData)
 ///////////////////////////////////////////////////////////API CALLS////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-function performLmiforallApiSearch(toSearchKeywordText)
+function performApiKeywordSearch(toSearchKeywordText)
 {
     var xmlHttpRequest = new XMLHttpRequest();
     var baseUrlText = "http://api.lmiforall.org.uk/api/v1/soc/search?q=";
@@ -126,3 +144,36 @@ function performLmiforallApiSearch(toSearchKeywordText)
     xmlHttpRequest.open("GET", (baseUrlText + toSearchKeywordText), true);
     xmlHttpRequest.send();
 }
+
+
+
+
+function performApiSocDataRequest(socText)
+{
+    var xmlHttpRequest = new XMLHttpRequest();
+    var baseUrlText = "http://api.lmiforall.org.uk/api/v1/soc/code/";
+    var returnedJsonObject = null;
+
+
+    xmlHttpRequest.onreadystatechange = function()
+    {
+        if(this.readyState === 4 )
+        {
+            if(this.status === 200)
+            {
+                returnedJsonObject = JSON.parse(this.responseText);
+                updateInfoCardDetailsWithData(returnedJsonObject);
+            }
+            else if (this.status === 0)
+            {
+                returnedJsonObject = [{ 'soc': this.status, 'title': 'Data API down',}, {'soc': 0, 'title': ' ',},];
+                updateTableWithData(returnedJsonObject);
+            }
+        }
+
+    };
+    xmlHttpRequest.open("GET", (baseUrlText + socText), true);
+    xmlHttpRequest.send();
+}
+
+
