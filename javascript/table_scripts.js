@@ -221,5 +221,52 @@ function updateInfoCardDetailsWithData(toUpdateWithData)
 
 function updateInfoCardDetailsWithChart(toUpdateWithData)
 {
-    console.log(JSON.stringify(toUpdateWithData.series));
+    var seriesData;
+    var yearsData;
+    var salariesData
+
+
+    var chartElement;
+    var barChart
+
+    seriesData = toUpdateWithData.series;
+
+
+    yearsData = [];
+    salariesData = [];
+    for(let currentSeriesData of seriesData)
+    {
+        yearsData.push(currentSeriesData.year);
+        salariesData.push(currentSeriesData.estpay);
+    }
+
+    console.log(JSON.stringify(yearsData));
+    console.log(JSON.stringify(salariesData));
+
+
+    chartElement = document.getElementById('chart').getContext('2d');
+    barChart = new Chart(chartElement,
+        {
+            type:'bar',
+            data:
+                {
+                    labels:yearsData,
+                    datasets:
+                        [
+                            {
+                                label:'£ per week',
+                                data:salariesData
+                            }
+                        ]
+                },
+            options:{}
+        });
+
+
+
+
+    console.log(JSON.stringify(seriesData));
+
+
+
 }
