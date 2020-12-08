@@ -47,6 +47,7 @@ function onClickTableRow(rowData)
 
     socNumber = rowData.soc;
     performApiSocDataRequest(socNumber);
+    performApiEstimatedPayRequest(socNumber, 1)
     // console.log(typeof socNumber);
 }
 
@@ -73,42 +74,7 @@ function onClickSearchButton()
 }
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////UPDATE UI FUNCTIONS////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-function updateTableWithData(toUpdateWithData)
-{
-    var tableElement;
-
-    tableElement = $('#table');
-    tableElement.bootstrapTable('destroy')
-    tableElement.bootstrapTable({data: toUpdateWithData});
-}
-
-
-function updateInfoCardDetailsWithData(toUpdateWithData)
-{
-    var infoCardRoleTitleText;
-    var infoCardQualificationsPText;
-    var infoCardDescriptionPText;
-    var infoCardRoleTitleElement;
-    var infoCardQualificationsPElement;
-    var infoCardDescriptionPElement;
-
-    infoCardRoleTitleText = toUpdateWithData.title;
-    infoCardQualificationsPText = toUpdateWithData.qualifications;
-    infoCardDescriptionPText = toUpdateWithData.description;
-
-    infoCardRoleTitleElement = $('#infoCardRoleTitle');
-    infoCardQualificationsPElement = $('#infoCardQualificationsP');
-    infoCardDescriptionPElement = $('#infoCardDescriptionP');
-    infoCardRoleTitleElement.text(infoCardRoleTitleText);
-    infoCardQualificationsPElement.text(infoCardQualificationsPText);
-    infoCardDescriptionPElement.text(infoCardDescriptionPText);
-}
 
 
 
@@ -179,3 +145,81 @@ function performApiSocDataRequest(socText)
 }
 
 
+
+
+function performApiEstimatedPayRequest(socText, regionNumber)
+{
+    var xmlHttpRequest = new XMLHttpRequest();
+    var baseUrlText = "http://api.lmiforall.org.uk/api/v1/ashe/estimatePay?soc=";
+    var middleUrlText = "&coarse=true&filters=region%3A";
+    var returnedJsonObject = null;
+
+
+    xmlHttpRequest.onreadystatechange = function()
+    {
+        if(this.readyState === 4 )
+        {
+            if(this.status === 200)
+            {
+                returnedJsonObject = JSON.parse(this.responseText);
+                updateInfoCardDetailsWithChart(returnedJsonObject);
+            }
+            else if (this.status === 0)
+            {
+                returnedJsonObject = [{ 'soc': this.status, 'title': 'Data API down',}, {'soc': 0, 'title': ' ',},];
+                updateTableWithData(returnedJsonObject);
+            }
+        }
+
+    };
+    xmlHttpRequest.open("GET", (baseUrlText + socText + middleUrlText + regionNumber), true);
+    xmlHttpRequest.send();
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////UPDATE UI FUNCTIONS////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+function updateTableWithData(toUpdateWithData)
+{
+    var tableElement;
+
+    tableElement = $('#table');
+    tableElement.bootstrapTable('destroy')
+    tableElement.bootstrapTable({data: toUpdateWithData});
+}
+
+
+function updateInfoCardDetailsWithData(toUpdateWithData)
+{
+    var infoCardRoleTitleText;
+    var infoCardQualificationsPText;
+    var infoCardDescriptionPText;
+    var infoCardRoleTitleElement;
+    var infoCardQualificationsPElement;
+    var infoCardDescriptionPElement;
+
+
+    infoCardRoleTitleText = toUpdateWithData.title;
+    infoCardQualificationsPText = toUpdateWithData.qualifications;
+    infoCardDescriptionPText = toUpdateWithData.description;
+
+    infoCardRoleTitleElement = $('#infoCardRoleTitle');
+    infoCardQualificationsPElement = $('#infoCardQualificationsP');
+    infoCardDescriptionPElement = $('#infoCardDescriptionP');
+
+    infoCardRoleTitleElement.text(infoCardRoleTitleText);
+    infoCardQualificationsPElement.text(infoCardQualificationsPText);
+    infoCardDescriptionPElement.text(infoCardDescriptionPText);
+}
+
+function updateInfoCardDetailsWithChart(toUpdateWithData)
+{
+    console.log(JSON.stringify(toUpdateWithData.series));
+}
