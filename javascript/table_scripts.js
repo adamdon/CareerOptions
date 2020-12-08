@@ -47,6 +47,34 @@ function onClickSearchButton()
 
 
 
+
+
+
+
+
+
+
+
+function updateTableWithData(toUpdateWithData)
+{
+    var tableElement;
+
+    tableElement = $('#table');
+    tableElement.bootstrapTable('destroy')
+    tableElement.bootstrapTable({data: toUpdateWithData});
+}
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////API CALLS////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 function performLmiforallApiSearch(toSearchKeywordText)
 {
     var xmlHttpRequest = new XMLHttpRequest();
@@ -73,27 +101,4 @@ function performLmiforallApiSearch(toSearchKeywordText)
     };
     xmlHttpRequest.open("GET", (baseUrlText + toSearchKeywordText), true);
     xmlHttpRequest.send();
-}
-
-
-
-
-
-
-
-function updateTableWithData(toUpdateWithData)
-{
-    var tableElement;
-
-    tableElement = $('#table');
-    tableElement.bootstrapTable('destroy')
-    tableElement.bootstrapTable({data: toUpdateWithData});
-}
-
-
-function detailFormatter(index, row)
-{
-    var html = []
-    $.each(row, function (key, value) { html.push('<p><b>' + key + ':</b> ' + value + '</p>')})
-    return html.join('')
 }

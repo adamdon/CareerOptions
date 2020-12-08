@@ -70,16 +70,15 @@
 
 
 
-        <div class="container"> <!-- start of page content -->
+        <div class="container"> <!-- start of root container page content -->
 
-            <div class="row"> <!-- jumbotron intro row -->
-
+            <div class="row"> <!-- jumbotron row -->
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
                     <div class="jumbotron myJumbotron">
                         <div class="container">
-                            <div class="row">
 
+                            <div class="row"> <!-- search table row start -->
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
 
@@ -95,7 +94,7 @@
 
                                     <table
                                             id="table"
-                                            class="table-sm table-hover table-striped table-dark table-bordered"
+                                            class="table-sm table-hover table-striped table-dark bg-secondary table-bordered"
                                             data-toggle="table"
                                             data-detail-view="true"
                                             data-detail-formatter="detailFormatter"
@@ -109,9 +108,39 @@
                                     </table>
 
                                 </div> <!-- main col end -->
+                            </div> <!-- table row end -->
 
 
-                            </div> <!-- row end -->
+
+
+                            <div class="row"> <!-- spacer row start -->
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                    <hr class="my-4">
+                                </div>
+                            </div> <!-- spacer row start -->
+
+
+
+
+                            <div class="row"> <!-- info card row start -->
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                                    <div class="card text-white bg-secondary myCard">
+                                        <div class="card-header">Info Card</div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Selected Title</h4>
+                                            <p class="card-text">
+                                                Some quick example text to build on the card title and make up
+                                                the bulk of the card's content.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div> <!-- info card row end  -->
+
+
+
 
                         </div> <!-- container end -->
 
@@ -122,17 +151,9 @@
             </div> <!-- jumbotron intro row end -->
 
 
-        </div> <!-- end of container -->
 
-        <script>
-            function detailFormatter(index, row) {
-                var html = []
-                $.each(row, function (key, value) {
-                    html.push('<p><b>' + key + ':</b> ' + value + '</p>')
-                })
-                return html.join('')
-            }
-        </script>
+        </div> <!-- end of root container -->
+
 
     </body>
 
