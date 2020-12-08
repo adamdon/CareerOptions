@@ -240,8 +240,23 @@ function updateInfoCardDetailsWithChart(toUpdateWithData)
         salariesData.push(currentSeriesData.estpay);
     }
 
+    yearsData.sort();
+    salariesData.sort();
+
+    // seriesData.sort(function(a, b)
+    // {
+    //     return a.year - b.year;
+    // });
+
+    // seriesData.sort(function(a, b)
+    // {
+    //     return a.estpay - b.estpay;
+    // });
+
     console.log(JSON.stringify(yearsData));
     console.log(JSON.stringify(salariesData));
+    console.log(JSON.stringify(seriesData));
+
 
 
     chartElement = document.getElementById('chart').getContext('2d');
@@ -255,17 +270,26 @@ function updateInfoCardDetailsWithChart(toUpdateWithData)
                         [
                             {
                                 label:'£ per week',
-                                data:salariesData
+                                data:salariesData,
+                                backgroundColor:'#df691a'
                             }
                         ]
                 },
-            options:{}
+            options:
+                {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
         });
 
 
 
 
-    console.log(JSON.stringify(seriesData));
 
 
 
