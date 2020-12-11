@@ -219,6 +219,7 @@ function updateInfoCardDetailsWithData(toUpdateWithData)
     infoCardDescriptionPElement.text(infoCardDescriptionPText);
 }
 
+
 function updateInfoCardDetailsWithChart(toUpdateWithData)
 {
     var seriesData;
@@ -271,7 +272,12 @@ function updateInfoCardDetailsWithChart(toUpdateWithData)
                             {
                                 label:'£ per week',
                                 data:salariesData,
-                                backgroundColor:'#df691a'
+                                backgroundColor:'#df691a',
+                                borderWidth:1,
+                                borderColor:'#4e5d6c',
+                                hoverBorderWidth:4,
+                                hoverBorderColor:'#2b3e50'
+
                             }
                         ]
                 },
@@ -286,11 +292,4 @@ function updateInfoCardDetailsWithChart(toUpdateWithData)
                     }
                 }
         });
-
-
-
-
-
-
-
 }
