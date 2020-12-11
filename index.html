@@ -11,12 +11,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">
         <link rel="stylesheet" href="css/colors.css" type="text/css">
         <link rel="stylesheet" href="css/main.css" type="text/css">
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/4ebb081c7a.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" defer integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" defer integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" defer integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+        <script src="javascript/table_scripts.js" defer></script>
+
+
+
     </head>
 
 
@@ -24,10 +33,9 @@
 
     <body>
 
-
         <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark ">
 
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img class="img-fluid rounded" src="images/career_options_logo.png" alt="logo" style="height: 30px; margin-top: -5px;">
             </a>
 
@@ -46,17 +54,16 @@
                         <a class="nav-link" href="html/search.html">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="html/contact.html">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="html/about.html">About Us</a>
                     </li>
                 </ul>
 
-                <form class="form-inline my-2 my-md-0">
-                    <label for="searchInput"></label>
-                    <input id="searchInput" name="searchInput" type="text" placeholder="Search" class="form-control mr-sm-2">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+
+                <form action="html/search.html" class="form-inline my-2 my-md-0">
+                    <input type="submit" value="Search" class="btn btn-secondary my-2 my-sm-0"  />
                 </form>
 
             </div>
@@ -85,7 +92,7 @@
                                         Find out about qualifications required and research courses to get the qualifications for the jobs you want.
                                     </p>
                                     <p class="lead">
-                                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                                        <a class="btn btn-primary btn-lg" href="html/search.html" role="button">Start Search</a>
                                     </p>
                                 </div> <!-- left col end -->
 
@@ -97,6 +104,88 @@
 
                             </div> <!-- row end -->
 
+
+
+                            <hr class="my-4">
+
+
+                            <div class="row"> <!-- card boxes-->
+
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="card text-white bg-secondary myCard">
+                                        <div class="card-header"><i class="fas fa-camera"></i> Header</div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Secondary card title</h4>
+                                            <p class="card-text">
+                                                Some quick example text to build on the card title and make up
+                                                the bulk of the card's content.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="card text-white bg-secondary myCard">
+                                        <div class="card-header">Header</div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Secondary card title</h4>
+                                            <p class="card-text">Some quick example text to build on the card title and make up
+                                                the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="card text-white bg-secondary myCard">
+                                        <div class="card-header">Header</div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Secondary card title</h4>
+                                            <p class="card-text">Some quick example text to build on the card title and make up
+                                                the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="card text-white bg-secondary myCard">
+                                        <div class="card-header">Header</div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Secondary card title</h4>
+                                            <p class="card-text">Some quick example text to build on the card title and make up
+                                                the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="card text-white bg-secondary myCard">
+                                        <div class="card-header">Header</div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Secondary card title</h4>
+                                            <p class="card-text">Some quick example text to build on the card title and make up
+                                                the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="card text-white bg-secondary myCard">
+                                        <div class="card-header">Header</div>
+                                        <div class="card-body">
+                                            <h4 class="card-title">Secondary card title</h4>
+                                            <p class="card-text">Some quick example text to build on the card title and make up
+                                                the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div> <!-- end of card boxes -->
+
+
+
+
+
                         </div> <!-- container end -->
 
 
@@ -106,80 +195,6 @@
             </div> <!-- jumbotron intro row end -->
 
 
-
-
-            <div class="row"> <!-- card boxes-->
-
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                    <div class="card text-white bg-secondary myCard">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Secondary card title</h4>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make up
-                                the bulk of the card's content.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                    <div class="card text-white bg-secondary myCard">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Secondary card title</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up
-                                the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                    <div class="card text-white bg-secondary myCard">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Secondary card title</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up
-                                the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                    <div class="card text-white bg-secondary myCard">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Secondary card title</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up
-                                the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                    <div class="card text-white bg-secondary myCard">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Secondary card title</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up
-                                the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
-                    <div class="card text-white bg-secondary myCard">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Secondary card title</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up
-                                the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
 
 
 

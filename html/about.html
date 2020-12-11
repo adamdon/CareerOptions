@@ -57,6 +57,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
                     </li>
+
                 </ul>
 
                 <form action="search.html" class="form-inline my-2 my-md-0">
@@ -100,14 +101,14 @@
                                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><!-- left text col start -->
 
                                                         <div class="alert alert-secondary" role="alert">
-                                                            <h5 class="alert-heading"><i class="fas fa-search"></i> Enter Search</h5>
+                                                            <h5 class="alert-heading">Enter Search</h5>
                                                             <hr class="my-1">
                                                             <p class="card-text">
-                                                                <form class="form-inline my-2 my-md-0">
-                                                                    <label for="searchInput"></label>
-                                                                    <input id="searchInput" name="searchInput" type="text" placeholder="Enter keyword" class="form-control mr-sm-2" required>
-                                                                    <button id="searchButton" class="btn btn-secondary my-2 my-sm-0" type="button" onclick="onClickSearchButton()">Search</button>
-                                                                </form>
+                                                            <form class="form-inline my-2 my-md-0">
+                                                                <label for="searchInput"></label>
+                                                                <input id="searchInput" name="searchInput" type="text" placeholder="Enter keyword" class="form-control mr-sm-2" required>
+                                                                <button id="searchButton" class="btn btn-secondary my-2 my-sm-0" type="button" onclick="onClickSearchButton()">Search</button>
+                                                            </form>
                                                             </p>
                                                         </div>
 
@@ -117,7 +118,7 @@
                                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><!-- right text col start -->
 
                                                         <div class="alert alert-secondary" role="alert">
-                                                            <h5 class="alert-heading"><i class="fas fa-book"></i> Instructions</h5>
+                                                            <h5 class="alert-heading">Instructions</h5>
                                                             <hr class="my-1">
                                                             <p class="card-text">
                                                                 Enter a  new profession in the search box then select the result row below to get more details in the info card.
@@ -208,18 +209,18 @@
                                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><!-- left text description col start -->
 
                                                         <div class="alert alert-secondary" role="alert">
-                                                            <h5 class="alert-heading"><i class="fas fa-user-tie"></i> Role Description</h5>
+                                                            <h5 class="alert-heading">Role Description</h5>
                                                             <hr class="my-1">
                                                             <p id="infoCardDescriptionP" class="card-text">
-
+                                                                Text here
                                                             </p>
                                                         </div>
 
                                                         <div class="alert alert-secondary" role="alert">
-                                                            <h5 class="alert-heading"><i class="fas fa-graduation-cap"></i> Qualifications Needed</h5>
+                                                            <h5 class="alert-heading">Qualifications Needed</h5>
                                                             <hr class="my-1">
                                                             <p id="infoCardQualificationsP" class="card-text">
-
+                                                                Text here
                                                             </p>
                                                         </div>
 
@@ -229,30 +230,30 @@
                                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><!-- right text description col start -->
 
                                                         <div class="alert alert-secondary" role="alert">
-                                                            <h5 class="alert-heading"><i class="fas fa-money-bill-wave"></i> Weekly Pay</h5>
+                                                            <h5 class="alert-heading">Weekly Pay</h5>
                                                             <hr class="my-1">
                                                             <p id="infoCardChartP" class="card-text">
 
-                                                                <div class="form-group">
-                                                                    <label for="regionSelect">Filter Region</label>
-                                                                    <select id="regionSelect" name="regionSelect" class="form-control">
-                                                                        <option value="1">London</option>
-                                                                        <option value="2">South East England</option>
-                                                                        <option value="3">East of England</option>
-                                                                        <option value="4">South West England</option>
-                                                                        <option value="5">West Midlands England</option>
-                                                                        <option value="6">East Midlands England</option>
-                                                                        <option value="7">Yorkshire and the Humber</option>
-                                                                        <option value="8">North West England</option>
-                                                                        <option value="9">North East England</option>
-                                                                        <option value="10">Wales</option>
-                                                                        <option value="11">Scotland</option>
-                                                                    </select>
-                                                                </div>
+                                                            <div class="form-group">
+                                                                <label for="regionSelect">Filter Region</label>
+                                                                <select id="regionSelect" name="regionSelect" class="form-control">
+                                                                    <option value="1">London</option>
+                                                                    <option value="2">South East England</option>
+                                                                    <option value="3">East of England</option>
+                                                                    <option value="4">South West England</option>
+                                                                    <option value="5">West Midlands England</option>
+                                                                    <option value="6">East Midlands England</option>
+                                                                    <option value="7">Yorkshire and the Humber</option>
+                                                                    <option value="8">North West England</option>
+                                                                    <option value="9">North East England</option>
+                                                                    <option value="10">Wales</option>
+                                                                    <option value="11">Scotland</option>
+                                                                </select>
+                                                            </div>
 
-                                                                <div>
-                                                                    <canvas id="chart"></canvas> <!-- bar chart is populated here by JS -->
-                                                                </div>
+                                                            <div>
+                                                                <canvas id="chart"></canvas> <!-- bar chart is populated here by JS -->
+                                                            </div>
                                                             </p>
                                                         </div>
 
