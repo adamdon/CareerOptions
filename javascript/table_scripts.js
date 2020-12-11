@@ -44,6 +44,8 @@ function onReadyTableRowOnClickEvent()
 function onClickTableRow(rowData)
 {
     var socNumber;
+    var regionNumber
+
 
     socNumber = rowData.soc;
     performApiSocDataRequest(socNumber);
