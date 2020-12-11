@@ -190,7 +190,18 @@ function updateTableWithData(toUpdateWithData)
 {
     var tableElement;
 
+    // var dataArray;
+    // dataArray = [];
+    // dataArray = Object.values(toUpdateWithData);
+    // console.log(" ")
+    // console.log(Object.values(toUpdateWithData))
+    // console.log(" ")
+    // console.log(typeof toUpdateWithData);
+    // console.log(typeof dataArray);
+    // console.log(" ")
+
     tableElement = $('#table');
+    // tableElement.bootstrapTable({pageLength : 5})
     tableElement.bootstrapTable('destroy')
     tableElement.bootstrapTable({data: toUpdateWithData});
 }
@@ -254,9 +265,9 @@ function updateInfoCardDetailsWithChart(toUpdateWithData)
     //     return a.estpay - b.estpay;
     // });
 
-    console.log(JSON.stringify(yearsData));
-    console.log(JSON.stringify(salariesData));
-    console.log(JSON.stringify(seriesData));
+    // console.log(JSON.stringify(yearsData));
+    // console.log(JSON.stringify(salariesData));
+    // console.log(JSON.stringify(seriesData));
 
 
 

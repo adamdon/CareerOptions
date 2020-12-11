@@ -11,12 +11,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">
         <link rel="stylesheet" href="../css/colors.css" type="text/css">
         <link rel="stylesheet" href="../css/main.css" type="text/css">
 
         <script src="https://code.jquery.com/jquery-3.5.1.js" defer integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<!--        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" defer integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js" defer></script>
@@ -99,10 +99,11 @@
                                     <table
                                             id="table"
                                             class="table-sm table-hover table-striped table-dark bg-secondary table-bordered"
+                                            data-page-list="[3, 5, all]"
+                                            data-page-size='5'
                                             data-toggle="table"
-                                            data-detail-view="true"
-                                            data-detail-formatter="detailFormatter"
-                                    >
+                                            data-pagination="true"
+                                    > <!-- Start of table with config here -->
                                         <thead>
                                             <tr>
                                                 <th data-field="soc">ID</th>
