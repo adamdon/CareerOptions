@@ -2,11 +2,21 @@
 //////////////////////////////////////////////////////OnREADY FUNCTIONS/////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//
+//Global vars
+//
+var scoNumberGlobal;
+
+
+
 
 $(document).ready(function()
 {
+    scoNumberGlobal = 2136; //default value if no search row select has been done yet
+
     onReadyOverrideEnterPress();
     onReadyTableRowOnClickEvent();
+    onReadyRegionSelectEvent();
 })
 
 
@@ -35,22 +45,45 @@ function onReadyTableRowOnClickEvent()
 }
 
 
+function onReadyRegionSelectEvent()
+{
+    $('#regionSelect').on('change', function()
+    {
+        onChangeRegionSelect();
+    });
+}
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////OnClick FUNCTIONS////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+function onChangeRegionSelect()
+{
+    var socNumber;
+    var regionNumber;
+
+    socNumber = scoNumberGlobal;
+    regionNumber = $('select[name=regionSelect] option').filter(':selected').val()
+
+    // performApiSocDataRequest(socNumber);
+    performApiEstimatedPayRequest(socNumber, regionNumber)
+}
+
 
 function onClickTableRow(rowData)
 {
     var socNumber;
-    var regionNumber
+    var regionNumber;
 
+    scoNumberGlobal = rowData.soc;
 
-    socNumber = rowData.soc;
+    socNumber = scoNumberGlobal;
+    regionNumber = $('select[name=regionSelect] option').filter(':selected').val()
+
     performApiSocDataRequest(socNumber);
-    performApiEstimatedPayRequest(socNumber, 1)
-    // console.log(typeof socNumber);
+    performApiEstimatedPayRequest(socNumber, regionNumber)
 }
 
 
