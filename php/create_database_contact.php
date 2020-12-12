@@ -21,7 +21,6 @@ try
     $connectionPdo->exec($sqlStatement);
     echo "Database created successfully<br>";
     echo "Hello world!";
-    include 'create_table_contact.php';
 
 }
 catch(PDOException $e)

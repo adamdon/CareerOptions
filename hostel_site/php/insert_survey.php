@@ -1,11 +1,5 @@
 <?php
 
-$first = null;
-$last = null;
-$email = null;
-$transport = null;
-$published = null;
-
 $connectionPdo = null;
 $servername = "localhost";
 $username = "root";
@@ -17,18 +11,12 @@ $dbname = "hostel";
 
 
 
-$first=$_POST['first'];
-$last=$_POST['last'];
-$email=$_POST['email'];
-$transport=$_POST['transport'];
-if($_POST['published'] == 'yes')
-{
-    $published=TRUE;
-}
-else
-{
-    $published=FALSE;
-}
+$first = null;
+$last = null;
+$email = null;
+$share = null;
+$message = null;
+
 
 
 
