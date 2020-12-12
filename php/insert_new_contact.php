@@ -19,10 +19,9 @@ catch(PDOException $PDOException)
 {
     if($PDOException->getCode() == 1049) // check for SQLSTATE[HY000] [1049] Unknown database
     {
-        echo "UNKNOWN database btw1";
         include 'create_database_contact.php'; //make careeroptions database
-        echo "UNKNOWN database btw2";
         include 'create_table_contact.php'; // make contact table
+
     }
     else
     {

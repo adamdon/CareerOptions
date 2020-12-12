@@ -1,5 +1,6 @@
 <?php
 $connectionPdo = null;
+$query = null;
 
 $servername = "localhost";
 $databaseName="careeroptions";
@@ -20,7 +21,7 @@ catch(PDOException $PDOException)
 }
 
 
-
+$query
 
 
 ?>
