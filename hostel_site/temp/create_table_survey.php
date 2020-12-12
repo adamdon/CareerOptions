@@ -1,6 +1,4 @@
 <?php
-
-
     $servername = "localhost";
     $username = "root";
     $password="";
@@ -25,5 +23,8 @@
 
     $query->execute();
     $conn = null;
+
+
+
 
 ?>
