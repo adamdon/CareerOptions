@@ -1,4 +1,5 @@
 <?php
+
 $connectionPdo = null;
 $query = null;
 
@@ -7,6 +8,14 @@ $databaseName="careeroptions";
 
 $username = "root";
 $password="";
+
+$first = null;
+$last = null;
+$email = null;
+$message = null;
+$share = null;
+
+
 
 
 
@@ -20,8 +29,23 @@ catch(PDOException $PDOException)
     echo ($PDOException->getCode() . "Connection failed: " . $PDOException->getMessage());
 }
 
+$first = "John";
+$last = "Doe";
+$email = "JonnyDoe@email.com";
+$message = "Love this site, keep up the good work";
+$share = true;
 
-$query
 
 
+
+$query=$connectionPdo->prepare("INSERT INTO contact (first, last, email, message, share) VALUES (?,?,?,?,?)");
+
+$query->bindParam(1, $first);
+$query->bindParam(2, $last);
+$query->bindParam(3, $email);
+$query->bindParam(4, $message);
+$query->bindParam(5, $share);
+$query->execute();
+
+$connectionPdo = null;
 ?>
