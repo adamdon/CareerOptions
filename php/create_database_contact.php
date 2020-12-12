@@ -19,13 +19,12 @@ try
 
     // use exec() because no results are returned
     $connectionPdo->exec($sqlStatement);
-    echo "Database created successfully<br>";
-    echo "Hello world!";
 
 }
 catch(PDOException $e)
 {
-    echo $sqlStatement . "<br>" . $e->getMessage();
+    echo $e->getCode();
+    exit();
 }
 
 //function createTableContact()

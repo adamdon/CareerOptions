@@ -1,4 +1,7 @@
 <?php
+
+$returnEcho = "";
+
 $connectionPdo = null;
 $query = null;
 
@@ -16,9 +19,6 @@ $message = null;
 $share = null;
 
 
-
-
-//echo var_dump($_POST['shareInput']);
 
 try
 {
@@ -69,14 +69,9 @@ try
 catch(PDOException $PDOException)
 {
     echo ($PDOException->getCode());
+    exit();
 }
 
 
-
-
-
-
-
-
-
+echo "0"; //end of script complete successful
 ?>
