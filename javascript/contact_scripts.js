@@ -28,7 +28,6 @@ function ContactFormButtonOnClick()
     var lastInputValue = $('#lastInput').val();
     var messageInputValue = $('#messageInput').val();
 
-    console.log("Onlick here");
     $.ajax
     ({
         type: "POST",
@@ -43,14 +42,17 @@ function ContactFormButtonOnClick()
             },
         success: function (resultsData)
         {
-            console.log(":) worked!!!");
-            console.log(resultsData);
-            $('outputDiv').html(resultsData);
-            // $('#contactform')[0].reset();
+            if(resultsData === "0")
+            {
+                console.log(":) worked!!!, returned 0 echo from php");
+            }
+            else
+            {
+                console.log(":( Didn't work due to error code: " + resultsData);
+            }
         },
         error: function(jqxhr, status, exception)
         {
-            $('outputDiv').html(exception);
             console.log('Exception:', exception);
         }
     }); //end of ajax call
