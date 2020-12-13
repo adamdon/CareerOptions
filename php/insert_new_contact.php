@@ -51,14 +51,8 @@ try
     $last = $_POST['lastInput'];;
     $email = $_POST['emailInput'];;
     $message = $_POST['messageInput'];;
-    if (isset($_POST['shareInput']))
-    {
-        $share = true;
-    }
-    else
-    {
-        $share = false;
-    }
+    if($_POST['shareInput'] == "true"){$share = true;} else{$share = false;}
+
     $query->bindParam(1, $first);
     $query->bindParam(2, $last);
     $query->bindParam(3, $email);

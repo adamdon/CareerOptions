@@ -22,11 +22,13 @@ function onReadyOverrideEnterPress()
 
 function ContactFormButtonOnClick()
 {
-    var shareInputValue = $('#shareInput').val();
+    var shareInputValue = $('#shareInput').is(':checked');
     var emailInputValue = $('#emailInput').val();
     var firstInputValue = $('#firstInput').val();
     var lastInputValue = $('#lastInput').val();
     var messageInputValue = $('#messageInput').val();
+
+
 
     $.ajax
     ({
