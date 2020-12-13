@@ -29,6 +29,7 @@ function ContactFormButtonOnClick()
     var messageInputValue = $('#messageInput').val();
 
 
+    $('contactFormButton').prop('disabled', true);
 
     $.ajax
     ({
@@ -47,6 +48,7 @@ function ContactFormButtonOnClick()
             if(resultsData === "0")
             {
                 console.log(":) worked!!!, returned 0 echo from php");
+                $('#contactForm').trigger("reset");
             }
             else
             {
