@@ -1,6 +1,7 @@
 $(document).ready(function()
 {
     requestJsonContactMessageData();
+    setInterval(function() {requestJsonContactMessageData();}, 2000); //Keeps checking for updates
 })
 
 
