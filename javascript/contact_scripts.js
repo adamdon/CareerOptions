@@ -1,8 +1,7 @@
-// $(document).ready(function()
-// {
-//     onReadyRegionSelectEvent();
-//     //onReadyRegContactFormButtonOnClick();
-// })
+$(document).ready(function()
+{
+    requestJsonContactMessageData();
+})
 
 
 
@@ -49,6 +48,7 @@ function ContactFormButtonOnClick()
             {
                 console.log(":) worked!!!, returned 0 echo from php");
                 $('#contactForm').trigger("reset");
+                requestJsonContactMessageData(); // request new table of results
             }
             else
             {
@@ -63,3 +63,40 @@ function ContactFormButtonOnClick()
 
     return false;
 }
+
+
+function requestJsonContactMessageData()
+{
+    $.ajax
+    ({
+        type: "POST",
+        url: "../php/select_all_contact.php",
+        data: {},
+        success: function (resultsData)
+        {
+            var resultsDataObject;
+            var resultsDataArray;
+
+            resultsDataObject = JSON.parse(resultsData)
+            resultsDataArray = [];
+
+            for(let currentResultsData of resultsDataObject)
+            {
+                resultsDataArray.push({message: currentResultsData}); //key required for bootstrap table
+            }
+            resultsDataArray.reverse();
+
+            $('#contactTable').bootstrapTable('destroy')
+            $('#contactTable').bootstrapTable({data: resultsDataArray});
+
+        },
+        error: function(jqxhr, status, exception)
+        {
+            console.log('Exception:', exception);
+        }
+    }); //end of ajax call
+    return false;
+}
+
+
+

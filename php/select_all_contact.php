@@ -34,7 +34,7 @@ $results=$query->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($results as $row)
 {
-    if($row['share'] == true)
+    if(($row['share'] == true) && ($row['message'] !== ""))
     {
         array_push($outputMessageArray, $row['message']);
     }

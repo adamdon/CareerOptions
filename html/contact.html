@@ -105,7 +105,8 @@
                                                             <hr class="my-1">
                                                             <p id="infoCardDescriptionP" class="card-text">
                                                                 Fill out the form below to send us a message.
-                                                                If you wish for your message to be publicly viewable use the "Share Message" checkbox
+                                                                If you wish for your message to be publicly viewable use the "Share Message" checkbox.
+                                                                Click "Refresh Messages" to see any new messages that other users have written.
                                                             </p>
                                                         </div>
 
@@ -172,10 +173,13 @@
                                                                         id="contactTable"
                                                                         class="table-sm table-hover table-striped table-dark bg-secondary table-bordered"
                                                                         data-toggle="table"
+                                                                        data-page-list="[13, 50, all]"
+                                                                        data-page-size='13'
+                                                                        data-pagination="true"
                                                                 > <!-- Start of table with config here -->
                                                                     <thead>
                                                                         <tr>
-                                                                            <th data-field="message">Shared Messages</th>
+                                                                            <th data-field="message" > <div class="text-center"> <span class="badge badge-light" ><a class=nav-link" href='' onclick='return requestJsonContactMessageData()'>Refresh Messages <i class="fas fa-redo-alt"></i></a> </span> </div> </th>
                                                                         </tr>
                                                                     </thead>
                                                                 </table>
