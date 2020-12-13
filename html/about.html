@@ -22,7 +22,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" defer integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" defer integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
-        <script src="../javascript/search_scripts.js" defer></script>
+        <script src="../javascript/courses_scripts.js" defer ></script>
     </head>
 
 
@@ -49,13 +49,19 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="search.html">Search</a>
+                        <a class="nav-link" href="../html/search.html">Search</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
+                        <a class="nav-link" href="../html/contact.html">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
+                        <a class="nav-link" href="../html/courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/funding.html">Funding</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/about.html">About Us</a>
                     </li>
 
                 </ul>
@@ -82,206 +88,65 @@
 
 
 
-
-
-
-                            <div class="row"> <!-- search card row start -->
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-
-                                    <div class="card text-white bg-secondary">
-                                        <div class="card-header">Get Started</div>
-                                        <div class="card-body">
-
-                                            <div class="container"> <!-- card body container start -->
-
-
-                                                <div class="row">
-
-
-                                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><!-- left text col start -->
-
-                                                        <div class="alert alert-secondary" role="alert">
-                                                            <h5 class="alert-heading">Enter Search</h5>
-                                                            <hr class="my-1">
-                                                            <p class="card-text">
-                                                            <form class="form-inline my-2 my-md-0">
-                                                                <label for="searchInput"></label>
-                                                                <input id="searchInput" name="searchInput" type="text" placeholder="Enter keyword" class="form-control mr-sm-2" required>
-                                                                <button id="searchButton" class="btn btn-secondary my-2 my-sm-0" type="button" onclick="onClickSearchButton()">Search</button>
-                                                            </form>
-                                                            </p>
-                                                        </div>
-
-                                                    </div><!-- left text description col  end -->
-
-
-                                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><!-- right text col start -->
-
-                                                        <div class="alert alert-secondary" role="alert">
-                                                            <h5 class="alert-heading">Instructions</h5>
-                                                            <hr class="my-1">
-                                                            <p class="card-text">
-                                                                Enter a  new profession in the search box then select the result row below to get more details in the info card.
-                                                            </p>
-                                                        </div>
-
-                                                    </div><!-- right text description col  end -->
-                                                </div>
-
-
-                                            </div> <!-- card body container end  -->
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div> <!-- search card row end  -->
-
-
-
-
-
-
-
-
-
-
-                            <div class="row"> <!-- search table row start -->
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-
-
-
-                                    <hr class="my-4">
-                                    <div class="card text-white bg-secondary">
-                                        <table
-                                                id="table"
-                                                class="table-sm table-hover table-striped table-dark bg-secondary table-bordered"
-                                                data-page-list="[3, 5, all]"
-                                                data-page-size='5'
-                                                data-toggle="table"
-                                                data-pagination="true"
-                                        > <!-- Start of table with config here -->
-                                            <thead>
-                                                <tr>
-                                                    <th data-field="soc">ID</th>
-                                                    <th data-field="title">Title</th>
-                                                </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
-
-                                </div> <!-- main col end -->
-                            </div> <!-- table row end -->
-
-
-
-
-                            <div class="row"> <!-- spacer row start -->
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                    <hr class="my-4">
-                                </div>
-                            </div> <!-- spacer row start -->
-
-
-
-
                             <div class="row"> <!-- info card row start -->
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
                                     <div class="card text-white bg-secondary">
-                                        <div class="card-header">Info Card</div>
+                                        <div class="card-header">About Us</div>
                                         <div class="card-body">
 
                                             <div class="container"> <!-- card body container start -->
 
 
 
-                                                <div class="row"> <!-- card title row start -->
-                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                                        <h4 id="infoCardRoleTitle" class="card-title">Selected Title</h4>
-                                                    </div>
-                                                </div><!-- card title row end  -->
 
 
                                                 <div class="row">
 
 
-                                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><!-- left text description col start -->
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><!-- left text description col start -->
 
                                                         <div class="alert alert-secondary" role="alert">
-                                                            <h5 class="alert-heading">Role Description</h5>
+                                                            <h5 class="alert-heading"><i class="fas fa-book"></i> Information</h5>
                                                             <hr class="my-1">
                                                             <p id="infoCardDescriptionP" class="card-text">
-                                                                Text here
+                                                                The data on this site is is driven by a number of sources for more information on this data please visit the links below
                                                             </p>
-                                                        </div>
-
-                                                        <div class="alert alert-secondary" role="alert">
-                                                            <h5 class="alert-heading">Qualifications Needed</h5>
-                                                            <hr class="my-1">
-                                                            <p id="infoCardQualificationsP" class="card-text">
-                                                                Text here
-                                                            </p>
-                                                        </div>
-
-                                                    </div><!-- left text description col  end -->
-
-
-                                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"><!-- right text description col start -->
-
-                                                        <div class="alert alert-secondary" role="alert">
-                                                            <h5 class="alert-heading">Weekly Pay</h5>
-                                                            <hr class="my-1">
-                                                            <p id="infoCardChartP" class="card-text">
-
-                                                            <div class="form-group">
-                                                                <label for="regionSelect">Filter Region</label>
-                                                                <select id="regionSelect" name="regionSelect" class="form-control">
-                                                                    <option value="1">London</option>
-                                                                    <option value="2">South East England</option>
-                                                                    <option value="3">East of England</option>
-                                                                    <option value="4">South West England</option>
-                                                                    <option value="5">West Midlands England</option>
-                                                                    <option value="6">East Midlands England</option>
-                                                                    <option value="7">Yorkshire and the Humber</option>
-                                                                    <option value="8">North West England</option>
-                                                                    <option value="9">North East England</option>
-                                                                    <option value="10">Wales</option>
-                                                                    <option value="11">Scotland</option>
-                                                                </select>
+                                                            <div class="card text-white bg-secondary">
+                                                                <ul>
+                                                                    <li><a class="link text-white" href="http://api.lmiforall.org.uk/">LMI For All API (Link)</a></li>
+                                                                    <li><a class="link text-white" href="https://github.com/Hipo/university-domains-list">Hipo university-domains-list API (Link)</a></li>
+                                                                </ul>
                                                             </div>
-
-                                                            <div>
-                                                                <canvas id="chart"></canvas> <!-- bar chart is populated here by JS -->
-                                                            </div>
-                                                            </p>
                                                         </div>
 
-                                                    </div><!-- right text description col  end -->
-                                                </div>
 
 
 
-                                            </div> <!-- card body container end  -->
 
+
+
+                                                </div> <!-- card body container end  -->
+
+                                            </div>
                                         </div>
+
                                     </div>
-
-                                </div>
-                            </div> <!-- info card row end  -->
+                                </div> <!-- info card row end  -->
 
 
 
 
-                        </div> <!-- Jumbotron content container end -->
-                    </div> <!-- jumbotron  end -->
 
-                </div>
-            </div> <!-- jumbotron intro row end -->
+                            </div> <!-- Jumbotron content container end -->
+                        </div> <!-- jumbotron  end -->
+
+                    </div>
+                </div> <!-- jumbotron intro row end -->
 
 
 
-        </div> <!-- end of root container -->
+            </div> <!-- end of root container -->
 
 
     </body>
