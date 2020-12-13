@@ -1,10 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+
+
     <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
+        <title>Course Options</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">
+        <link rel="stylesheet" href="../css/colors.css" type="text/css">
+        <link rel="stylesheet" href="../css/main.css" type="text/css">
+
+        <script src="https://kit.fontawesome.com/4ebb081c7a.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" defer integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" defer integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" defer integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" defer integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+        <script src="../javascript/courses_scripts.js" defer ></script>
     </head>
+
+
+
+
     <body>
-        
+
+
+        <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark ">
+
+            <a class="navbar-brand" href="../index.html">
+                <img class="img-fluid rounded" src="../images/career_options_logo.png" alt="logo" style="height: 30px; margin-top: -5px;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/search.html">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/funding.html">Funding</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/about.html">About Us</a>
+                    </li>
+
+                </ul>
+
+                <form action="search.html" class="form-inline my-2 my-md-0">
+                    <input type="submit" value="Search" class="btn btn-secondary my-2 my-sm-0"  />
+                </form>
+
+            </div>
+
+        </nav>
+
+
+
+
+        <div class="container"> <!-- start of root container page content -->
+
+            <div class="row"> <!-- jumbotron row -->
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                    <div class="jumbotron myJumbotron">
+                        <div class="container"> <!-- Jumbotron content container start -->
+
+
+
+
+                            <div class="row"> <!-- info card row start -->
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                                    <div class="card text-white bg-secondary">
+                                        <div class="card-header">Funding</div>
+                                        <div class="card-body">
+
+                                            <div class="container"> <!-- card body container start -->
+
+
+
+
+
+                                                <div class="row">
+
+
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><!-- left text description col start -->
+
+                                                        <div class="alert alert-secondary" role="alert">
+                                                            <h5 class="alert-heading"><i class="fas fa-book"></i> Instructions</h5>
+                                                            <hr class="my-1">
+                                                            <p id="infoCardDescriptionP" class="card-text">
+                                                                Take your time exploring the links below to find out about the help you get for your studies
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="alert alert-secondary" role="alert">
+                                                            <h5 class="alert-heading"><i class="fas fa-link"></i> Links</h5>
+                                                            <hr class="my-1">
+
+                                                            <div class="card text-white bg-secondary">
+                                                                <ul>
+                                                                    <li><a class="link text-white" href="https://www.thescholarshiphub.org.uk/">The Scholarship Hub (Link)</a></li>
+                                                                    <li><a class="link text-white" href="https://www.gov.uk/browse/education/student-finance">UK Gov Student Finance (Link)</a></li>
+                                                                    <li><a class="link text-white" href="https://www.turn2us.org.uk/">Turn2Us (Link)</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                    </div><!-- left text description col  end -->
+
+
+
+
+
+                                                </div> <!-- card body container end  -->
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> <!-- info card row end  -->
+
+
+
+
+
+                            </div> <!-- Jumbotron content container end -->
+                        </div> <!-- jumbotron  end -->
+
+                    </div>
+                </div> <!-- jumbotron intro row end -->
+
+
+
+            </div> <!-- end of root container -->
+
+
     </body>
+
+
 </html>
