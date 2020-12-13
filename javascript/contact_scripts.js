@@ -1,5 +1,6 @@
 $(document).ready(function()
 {
+    onReadyOverrideEnterPress();
     requestJsonContactMessageData();
     setInterval(function() {requestJsonContactMessageData();}, 2000); //Keeps checking for updates
 })
@@ -87,8 +88,8 @@ function requestJsonContactMessageData()
             }
             resultsDataArray.reverse();
 
-            $('#contactTable').bootstrapTable('destroy')
-            $('#contactTable').bootstrapTable({data: resultsDataArray});
+            // $('#contactTable').bootstrapTable('destroy')
+            $('#contactTable').bootstrapTable('load', resultsDataArray);
 
         },
         error: function(jqxhr, status, exception)
